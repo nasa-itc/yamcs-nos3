@@ -64,7 +64,6 @@ dataLinks:
     port: 5111
     updateSimulationTime: true
     packetPreprocessorClassName: org.yamcs.nos3.Truth42PacketPreprocessor    
-
 mdb:
   - type: xtce
     args:
@@ -92,46 +91,46 @@ mdb:
       file: mdb/to_debug.xtce
   - type: xtce
     args:
-      file: mdb/arducam.xtce
+      file: ${env.COMPONENT_DIR}/arducam/gsw/arducam.xtce
   - type: xtce
     args:
-      file: mdb/generic_adcs.xtce
+      file: ${env.COMPONENT_DIR}/generic_adcs/gsw/generic_adcs.xtce
   - type: xtce
     args:
-      file: mdb/generic_css.xtce
+      file: ${env.COMPONENT_DIR}/generic_css/gsw/generic_css.xtce
   - type: xtce
     args:
-      file: mdb/generic_eps.xtce
+      file: ${env.COMPONENT_DIR}/generic_eps/gsw/generic_eps.xtce
   - type: xtce
     args:
-      file: mdb/generic_fss.xtce
+      file: ${env.COMPONENT_DIR}/generic_fss/gsw/generic_fss.xtce
   - type: xtce
     args:
-      file: mdb/generic_imu.xtce
+      file: ${env.COMPONENT_DIR}/generic_imu/gsw/generic_imu.xtce
   - type: xtce
     args:
-      file: mdb/generic_mag.xtce
+      file: ${env.COMPONENT_DIR}/generic_mag/gsw/generic_mag.xtce
   - type: xtce
     args:
-      file: mdb/generic_radio.xtce
+      file: ${env.COMPONENT_DIR}/generic_radio/gsw/generic_radio.xtce
   - type: xtce
     args:
-      file: mdb/generic_reaction_wheel.xtce
+      file: ${env.COMPONENT_DIR}/generic_reaction_wheel/gsw/generic_reaction_wheel.xtce
   - type: xtce
     args:
-      file: mdb/generic_star_tracker.xtce
+      file: ${env.COMPONENT_DIR}/generic_star_tracker/gsw/generic_star_tracker.xtce
   - type: xtce
     args:
-      file: mdb/generic_thruster.xtce
+      file: ${env.COMPONENT_DIR}/generic_thruster/gsw/generic_thruster.xtce
   - type: xtce
     args:
-      file: mdb/generic_torquer.xtce
+      file: ${env.COMPONENT_DIR}/generic_torquer/gsw/generic_torquer.xtce
   - type: xtce
     args:
-      file: mdb/novatel_oem615.xtce
+      file: ${env.COMPONENT_DIR}/novatel_oem615/gsw/novatel_oem615.xtce
   - type: xtce
     args:
-      file: mdb/sample.xtce
+      file: ${env.COMPONENT_DIR}/sample/gsw/sample.xtce
 #  - type: xtce
 #    args:
 #      file: mdb/syn.xtce
