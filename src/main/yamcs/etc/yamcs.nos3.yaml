@@ -28,20 +28,20 @@ services:
   - class: org.yamcs.timeline.TimelineService
 
 dataLinks:
-  - name: radio-in
-    class: org.yamcs.tctm.UdpTmDataLink
-    stream: tm_realtime
-    port: 6011
-    packetPreprocessorClassName: org.yamcs.tctm.cfs.CfsPacketPreprocessor
-    packetPreprocessorArgs:
-      useLocalGenerationTime: true
+  # - name: radio-in
+  #   class: org.yamcs.tctm.UdpTmDataLink
+  #   stream: tm_realtime
+  #   port: 6011
+  #   packetPreprocessorClassName: org.yamcs.tctm.cfs.CfsPacketPreprocessor
+  #   packetPreprocessorArgs:
+  #     useLocalGenerationTime: true
 
-  - name: radio-out
-    class: org.yamcs.tctm.UdpTcDataLink
-    stream: tc_realtime
-    host: cryptolib
-    port: 6010
-    commandPostprocessorClassName: org.yamcs.tctm.cfs.CfsCommandPostprocessor
+  # - name: radio-out
+  #   class: org.yamcs.tctm.UdpTcDataLink
+  #   stream: tc_realtime
+  #   host: cryptolib
+  #   port: 6010
+  #   commandPostprocessorClassName: org.yamcs.tctm.cfs.CfsCommandPostprocessor
 
   - name: debug-in
     class: org.yamcs.tctm.UdpTmDataLink
@@ -50,6 +50,14 @@ dataLinks:
     packetPreprocessorClassName: org.yamcs.tctm.cfs.CfsPacketPreprocessor
     packetPreprocessorArgs:
       useLocalGenerationTime: true
+
+  # - name: debug-in
+  #   class: org.yamcs.tctm.UdpTmDataLink
+  #   stream: tm_realtime
+  #   port: 50050
+  #   packetPreprocessorClassName: org.yamcs.tctm.cfs.CfsPacketPreprocessor
+  #   packetPreprocessorArgs:
+  #     useLocalGenerationTime: true
       
   - name: debug-out
     class: org.yamcs.tctm.UdpTcDataLink
@@ -58,14 +66,17 @@ dataLinks:
     port: 5012
     commandPostprocessorClassName: org.yamcs.tctm.cfs.CfsCommandPostprocessor
 
-  - name: truth42-in
-    class: org.yamcs.tctm.UdpTmDataLink
-    stream: truth42_data
-    port: 5111
-    updateSimulationTime: true
-    packetPreprocessorClassName: org.yamcs.nos3.Truth42PacketPreprocessor    
+  # - name: truth42-in
+  #   class: org.yamcs.tctm.UdpTmDataLink
+  #   stream: truth42_data
+  #   port: 5111
+  #   updateSimulationTime: true
+  #   packetPreprocessorClassName: org.yamcs.nos3.Truth42PacketPreprocessor    
 
 mdb:
+  # - type: xml
+  #   args:
+  #     file: mdb/fprime.xml
   - type: xtce
     args:
       file: mdb/ccsds.xtce
