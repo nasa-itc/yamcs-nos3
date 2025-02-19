@@ -18,3 +18,9 @@ instances:
 # Secret key unique to a particular Yamcs installation.
 # This is used to provide cryptographic signing.
 secretKey: changeme
+
+buckets:
+  - name: sender
+    path: ../../cfdpUp
+  - name: receiver
+    path: ../../cfdpDown
