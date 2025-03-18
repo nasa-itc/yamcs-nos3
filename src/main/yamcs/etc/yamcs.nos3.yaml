@@ -43,21 +43,21 @@ dataLinks:
   #   port: 6010
   #   commandPostprocessorClassName: org.yamcs.tctm.cfs.CfsCommandPostprocessor
 
+  # - name: debug-in
+  #   class: org.yamcs.tctm.UdpTmDataLink
+  #   stream: tm_realtime
+  #   port: 5013
+  #   packetPreprocessorClassName: org.yamcs.tctm.cfs.CfsPacketPreprocessor
+  #   packetPreprocessorArgs:
+  #     useLocalGenerationTime: true
+
   - name: debug-in
     class: org.yamcs.tctm.UdpTmDataLink
     stream: tm_realtime
     port: 5013
-    packetPreprocessorClassName: org.yamcs.tctm.cfs.CfsPacketPreprocessor
+    packetPreprocessorClassName: org.yamcs.nos3.FprimePreProcessor
     packetPreprocessorArgs:
       useLocalGenerationTime: true
-
-  # - name: debug-in
-  #   class: org.yamcs.tctm.UdpTmDataLink
-  #   stream: tm_realtime
-  #   port: 50050
-  #   packetPreprocessorClassName: org.yamcs.tctm.cfs.CfsPacketPreprocessor
-  #   packetPreprocessorArgs:
-  #     useLocalGenerationTime: true
       
   - name: debug-out
     class: org.yamcs.tctm.UdpTcDataLink
@@ -103,46 +103,7 @@ mdb:
       file: mdb/to_debug.xtce
   - type: xtce
     args:
-      file: mdb/arducam.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_adcs.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_css.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_eps.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_fss.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_imu.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_mag.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_radio.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_reaction_wheel.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_star_tracker.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_thruster.xtce
-  - type: xtce
-    args:
-      file: mdb/generic_torquer.xtce
-  - type: xtce
-    args:
-      file: mdb/novatel_oem615.xtce
-  - type: xtce
-    args:
-      file: mdb/sample.xtce
+      file: mdb/fprime.xtce
 #  - type: xtce
 #    args:
 #      file: mdb/syn.xtce
