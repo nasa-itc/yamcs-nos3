@@ -21029,7 +21029,7 @@
           <xtce:IntegerDataEncoding sizeInBits="16" encoding="unsigned" byteOrder="leastSignificantByteFirst"/>
           <xtce:ValidRange minInclusive="0" maxInclusive="65535"/>
         </xtce:IntegerArgumentType>
-        <xtce:StringArgumentType name="DEST_IP_Type" characterWidth="8" initialValue="radio_sim" shortDescription="Destination IP">
+        <xtce:StringArgumentType name="DEST_IP_Type" characterWidth="8" initialValue="radio-sim" shortDescription="Destination IP">
           <xtce:StringDataEncoding encoding="UTF-8">
             <xtce:SizeInBits>
               <xtce:Fixed>
