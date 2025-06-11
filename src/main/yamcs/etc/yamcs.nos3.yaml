@@ -131,6 +131,9 @@ mdb:
   - type: xtce
     args:
       file: ${env.COMPONENT_DIR}/sample/gsw/sample.xtce
+  - type: xtce
+    args:
+      file: ${env.COMPONENT_DIR}/mgr/gsw/mgr.xtce
 #  - type: xtce
 #    args:
 #      file: mdb/syn.xtce
