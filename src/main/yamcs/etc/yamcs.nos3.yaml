@@ -54,7 +54,7 @@ dataLinks:
   - name: debug-out
     class: org.yamcs.tctm.UdpTcDataLink
     stream: tc_realtime
-    host: nos_fsw
+    host: nos-fsw
     port: 5012
     commandPostprocessorClassName: org.yamcs.tctm.cfs.CfsCommandPostprocessor
 
@@ -131,6 +131,9 @@ mdb:
   - type: xtce
     args:
       file: ${env.COMPONENT_DIR}/sample/gsw/sample.xtce
+  - type: xtce
+    args:
+      file: ${env.COMPONENT_DIR}/mgr/gsw/mgr.xtce
 #  - type: xtce
 #    args:
 #      file: mdb/syn.xtce
