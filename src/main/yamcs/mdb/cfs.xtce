@@ -21792,6 +21792,14 @@
             <xtce:Enumeration value="1" label="CHAN 1"/>
           </xtce:EnumerationList>
         </xtce:EnumeratedArgumentType>
+        <xtce:EnumeratedArgumentType name="VIRTUALCHANNEL_Type" initialValue="PLAINTEXT" shortDescription="Virtual Channel">
+          <xtce:IntegerDataEncoding sizeInBits="8" encoding="unsigned"/>
+          <xtce:EnumerationList>
+            <xtce:Enumeration value="0" label="PLAINTEXT"/>
+            <xtce:Enumeration value="1" label="ENCRYPTED"/>
+            <xtce:Enumeration value="2" label="AUTHENTICATED"/>
+          </xtce:EnumerationList>
+        </xtce:EnumeratedArgumentType>
         <xtce:StringArgumentType name="DEST_ID_Type" characterWidth="8" initialValue="0.21" shortDescription="Destination ID - 2 bytes">
           <xtce:StringDataEncoding encoding="UTF-8">
             <xtce:SizeInBits>
@@ -22126,6 +22134,22 @@
             <xtce:EntryList>
               <xtce:ArgumentRefEntry argumentRef="DEST_IP"/>
               <xtce:ArgumentRefEntry argumentRef="DEST_PORT"/>
+            </xtce:EntryList>
+          </xtce:CommandContainer>
+        </xtce:MetaCommand>
+        <xtce:MetaCommand name="TO_SET_TM_VC">
+          <xtce:BaseMetaCommand metaCommandRef="/CCSDS/CCSDS_TC">
+            <xtce:ArgumentAssignmentList>
+              <xtce:ArgumentAssignment argumentName="CCSDS_STREAMID" argumentValue="6272"/>
+              <xtce:ArgumentAssignment argumentName="CCSDS_FC" argumentValue="41"/>
+            </xtce:ArgumentAssignmentList>
+          </xtce:BaseMetaCommand>
+          <xtce:ArgumentList>
+            <xtce:Argument name="VIRTUALCHANNEL" argumentTypeRef="VIRTUALCHANNEL_Type"/>
+          </xtce:ArgumentList>
+          <xtce:CommandContainer name="CFS_TO_SET_TM_VC_CommandContainer">
+            <xtce:EntryList>
+              <xtce:ArgumentRefEntry argumentRef="VIRTUALCHANNEL"/>
             </xtce:EntryList>
           </xtce:CommandContainer>
         </xtce:MetaCommand>
