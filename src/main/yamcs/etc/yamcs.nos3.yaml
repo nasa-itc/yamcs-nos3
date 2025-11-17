@@ -101,9 +101,12 @@ mdb:
   - type: xtce
     args:
       file: mdb/to_debug.xtce
+  # - type: xtce
+  #   args:
+  #     file: mdb/fprime.xtce
   - type: xtce
     args:
-      file: mdb/fprime.xtce
+      file: mdb/sample.xtce
 #  - type: xtce
 #    args:
 #      file: mdb/syn.xtce
