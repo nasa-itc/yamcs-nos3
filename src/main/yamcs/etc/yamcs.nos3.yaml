@@ -59,12 +59,31 @@ dataLinks:
     packetPreprocessorArgs:
       useLocalGenerationTime: true
       
+  # - name: debug-out
+  #   class: org.yamcs.tctm.UdpTcDataLink
+  #   stream: tc_realtime
+  #   host: nos_fsw
+  #   port: 5012
+  #   commandPostprocessorClassName: org.yamcs.tctm.cfs.CfsCommandPostprocessor
+
+  # - name: debug-out
+  #   class: org.yamcs.tctm.UdpTmDataLink  # Changed to TM (telemetry) data link
+  #   stream: tm_realtime                   # Changed to tm_realtime stream
+  #   port: 5012
+  #   packetPreprocessorClassName: org.yamcs.nos3.FPrimeCommandPostprocessor  # Note: packetPreprocessor, not commandPostprocessor
+  #   packetPreprocessorArgs:
+  #     targetOpcode: 0x18FA  # Replace with your actual target opcode
+  #     scriptPath: "../../../../scripts/fprimecmding.sh"
+
   - name: debug-out
-    class: org.yamcs.tctm.UdpTcDataLink
+    class: org.yamcs.tctm.UdpTcDataLink  # This is for outgoing commands
     stream: tc_realtime
     host: nos_fsw
     port: 5012
-    commandPostprocessorClassName: org.yamcs.tctm.cfs.CfsCommandPostprocessor
+    commandPostprocessorClassName: org.yamcs.nos3.FPrimeCommandPostprocessor  # Note: commandPostprocessor, not packetPreprocessor
+    commandPostprocessorArgs:
+      targetCommand: "SAMPLE_REQ_HK"  # The command name you want to intercept
+      scriptPath: "/home/jstar/dev/428_original/nos3/scripts/fprimecmding.sh"
 
   # - name: truth42-in
   #   class: org.yamcs.tctm.UdpTmDataLink
